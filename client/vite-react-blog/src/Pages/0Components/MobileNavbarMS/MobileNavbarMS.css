@@ -1,0 +1,150 @@
+.mobile-navbar-ms-top{
+    display: none;
+    position: sticky;
+    top: 0;
+    height: 6vh;
+    width: 100%;
+    background-color: white;
+    z-index: 100;
+}
+.mobile-navbar-ms-top-contents{
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.mobile-navbar-ms-top-logo{
+    padding-left: 20px;
+    font-size: 25px;
+    cursor: pointer;
+    color: black;
+    
+}
+.mobile-navbar-ms-top-logo a{
+    text-decoration: none;
+    color: rgb(154, 240, 243);
+}
+.mobile-navbar-ms-side-toggle-btn{
+    width: 50px;
+    height: 50px;
+    font-size: 25px;
+    background-color: transparent;
+    border: none;
+    color: rgb(154, 240, 243);
+    cursor: pointer;
+}
+
+/*-----------------------------------------------------------------------------------------*/
+
+.mobile-navbar-ms-side-bg-close-btn{
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(99, 99, 99, 0.808);
+    z-index: 101;
+}
+.mobile-navbar-ms-side{
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 280px;
+    height: 100vh;
+    background-color: white;
+    z-index: 102;
+    
+}
+.mobile-navbar-ms-side-contents{
+    width: 100%;
+    height: 100%;
+    padding-top: 150px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.mobile-navbar-ms-side-x-close-btn{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 10px;
+    right: 15px;
+    background-color: transparent;
+    color: rgb(154, 240, 243);
+    font-size: 30px;
+    border: none;
+    cursor: pointer;
+}
+.mobile-navbar-ms-side-userdisplay{
+    margin: 0 auto;
+    text-align: center;
+    color: rgb(130, 130, 130);
+    font-size: 18px;
+}
+.mobile-navbar-ms-side-user-image{
+    width: 95px;
+    height: 95px;
+    border: 3px solid rgb(130, 130, 130);
+    border-radius: 50px;
+    overflow: hidden;
+    margin: 0 auto 10px auto;
+}
+.mobile-navbar-ms-side-user-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.nav{
+    display: flex;
+}
+.mobile-navbar-ms-side-links{
+    width: 250px;
+    margin: auto;
+    list-style: none;
+
+    display: flex;
+    flex-direction: column;
+}
+.mobile-navbar-ms-side-links li{
+    height: 50px;
+    width: 100%;
+}
+.mobile-navbar-ms-side-links li a{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: fit-content;
+    font-size: 18px;
+    text-decoration: none;
+    color: rgb(129, 129, 129);
+    margin-left: 50px;
+}
+.mobile-navbar-ms-side-links li p{
+    margin-left: 20px;
+}
+.mob-nav-links-i{
+    width: 25px;
+}
+.side-ms-placeholder{
+    background-color: rgb(154, 240, 243);
+    border-radius: 10px;
+}
+.mobile-navbar-ms-side-logout-btn{
+    width: 100%;
+    height: 50px;
+    border: none;
+    color: rgb(130, 130, 130);
+    border-top: 1px solid rgb(130, 130, 130);
+    background-color: transparent;
+    cursor: pointer;
+}
+
+
+@media (max-width: 700px){
+    .mobile-navbar-ms-top{
+        display: block;
+    }
+}

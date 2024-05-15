@@ -1,0 +1,78 @@
+.blogposts-ms{
+    min-height: 100vh;
+    background-color: white;
+    border-right: 1px rgb(219, 219, 219) solid;
+}
+.blogposts-ms-header{
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: white;
+    height: 60px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+}
+.blogposts-ms-userinfo{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    
+}
+.blogpost-ms-userpicture{
+    width: 40px;
+    height: 40px;
+    border-radius: 15px;
+    background-color: rgb(214, 245, 246);
+}
+.blogpost-ms-userpicture img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.blogposts-ms h1{
+    font-size: 18px;
+    color: rgb(143, 143, 143);
+}
+.blogposts-ms-follow-btn{
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: rgb(103, 215, 103);
+    border: none;
+    cursor: pointer;
+    font-size: 12px;
+}
+.blogposts-ms-unfollow-btn{
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: rgb(235, 93, 93);
+    border: none;
+    cursor: pointer;
+    font-size: 12px;
+}
+.blogposts-ms-contents{
+    width: 100%;
+    flex: 1;
+    padding: 20px 20px;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px 20px;
+}
+.blogposts-ms-nopostsmsg{
+    display: flex;
+}
+
+@media (max-width: 800px){
+    .blogposts-ms{
+        margin-left: 0;
+    }
+    .blogposts-ms-header{
+        position: static;
+    }
+}

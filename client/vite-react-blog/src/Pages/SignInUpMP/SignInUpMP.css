@@ -1,0 +1,77 @@
+.signinup-mp{
+    width: 100%;
+    height: 100vh;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+}
+.signinup-mp-logo{
+    text-align: center;
+    font-size: 30px;
+    color: rgb(85, 203, 207);
+}
+.signinup-mp-contents{
+    max-width: 400px;
+    min-height: 470px;
+    margin: auto;
+    padding: 40px 60px;
+    border-radius: 25px;
+    background-color: white;
+    border: 1px solid rgb(221, 221, 221);
+}
+.signinup-mp-contents h1{
+    margin: 10px 0px;
+    font-size: 20px;
+}
+.signinup-fields{
+    display: flex;
+    flex-direction: column;
+    gap: 29px;
+    margin-top: 30px;
+}
+.signinup-fields input{
+    height: 52px;
+    width: 100%;
+    border: 1px solid #c9c9c9;
+    border-radius: 25px;
+    outline: none;
+    color: #5c5c5c;
+    font-size: 16px;
+    padding-left: 20px;
+    background-color: white;
+}
+.signinup-btn{
+    width: 100%;
+    height: 52px;
+    color: white;
+    background-color: #80c4cf;
+    margin-top: 30px;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+}
+.signinup-login{
+    margin-top: 20px;
+    color: #5c5c5c;
+    font-size: 18px;
+    font-weight: 500;
+}
+.signinup-login span{
+    color: #41b3ff;
+    font-weight: 600;
+    cursor: pointer;
+}
+.signinup-agree{
+    display: flex;
+    align-items: center;
+    margin-top: 25px;
+    gap: 20px;
+    color: #5c5c5c;
+    font-size: 18px;
+    font-weight: 500;
+}
+.signinup-agree input{
+    cursor: pointer;
+}

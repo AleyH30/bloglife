@@ -1,0 +1,29 @@
+.notifications-mp{
+    flex: 1;
+    display: flex;
+}
+.notifications-mp-contents{
+    width: 100%;
+    max-width: 650px;
+    background-color: white;
+    box-shadow: 0px 0px 10px 3px rgb(189, 189, 189);
+    padding: 20px;
+}
+.notifications-mp-contents h1{
+    font-size: 18px;
+}
+.notifications-mp-contents p{
+    margin-top: 50px;
+    text-align: center;
+}
+
+@media (max-width: 1000px){
+    .notifications-mp-contents{
+        max-width: none;
+    }
+}
+@media (max-width: 700px){
+    .notifications-mp-contents{
+        box-shadow: none;
+    }
+}

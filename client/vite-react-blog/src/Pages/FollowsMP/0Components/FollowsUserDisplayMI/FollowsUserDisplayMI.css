@@ -1,0 +1,46 @@
+.follows-user-display-mi{
+    display: flex;
+    justify-content: space-between;
+}
+.fud-mi-userinfo{
+    display: flex;
+    gap: 10px;
+}
+.fud-mi-userinfo a{
+    text-decoration: none;
+    color: black;
+}
+.fud-mi-userpicture{
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: rgb(214, 245, 246);
+    overflow: hidden;
+    cursor: pointer;
+}
+.fud-mi-userpicture img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.fud-mi-names-cont{
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+.fud-mi-follow-btn{
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: rgb(103, 215, 103);
+    border: none;
+    cursor: pointer;
+}
+.fud-mi-unfollow-btn{
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: rgb(235, 93, 93);
+    border: none;
+    cursor: pointer;
+}

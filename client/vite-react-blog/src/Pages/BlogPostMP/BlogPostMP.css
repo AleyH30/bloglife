@@ -1,0 +1,108 @@
+.blogpost-mp{
+    flex: 1;
+    display: flex;
+}
+.blogpost-ms{
+    width: 100%;
+    max-width: 650px;
+    background-color: white;
+    box-shadow: 0px 0px 10px 3px rgb(189, 189, 189);
+}
+.blogpost-ms-contents{
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+}
+.blogpost-ms-image-container{
+    width: 100%;
+    height: 300px;
+}
+.blogpost-ms-image-container img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.blogpost-ms-title{
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: 700;
+    color: black;
+}
+.blogpost-ms-text{
+    margin-top: 20px;
+    font-size: 16px;
+    line-height: 1.6;
+    color: black;
+}
+.blogpost-ms-edit-abtn{
+    display: flex;
+    width: 70px;
+    height: 30px;
+    background-color: rgb(214, 245, 246);
+    border-radius: 25px;
+    border: none;
+    margin-bottom: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+    margin-left: auto;
+    justify-content: center;
+    align-items: center;
+}
+.res-wrapper-12{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    border: none;
+}
+.blogpost-ms-userinfo{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.blogpost-ms-userinfo a{
+    text-decoration: none;
+    color: black;
+}
+.blogpost-ms-userpicture{
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: rgb(214, 245, 246);
+}
+.blogpost-ms-userpicture img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.blogpost-ms-likes-cont{
+    display: flex;
+    gap: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+.blogpost-ms-likes-cont p{
+    color: black;
+}
+.blogpost-ms-like-heart-reg{
+    font-size: 20px;
+    color: black;
+}
+.blogpost-ms-like-heart-solid{
+    font-size: 20px;
+    color: rgb(216, 31, 31); 
+}
+.blogpost-ms-likes-cont:hover{
+    color: rgb(216, 31, 31); 
+}
+
+@media (max-width: 1000px){
+    .blogpost-ms{
+        max-width: none;
+    }
+}
+@media (max-width: 700px){
+    .blogpost-ms{
+        box-shadow: none;
+    }
+}

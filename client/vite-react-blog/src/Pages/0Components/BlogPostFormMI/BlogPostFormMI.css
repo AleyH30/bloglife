@@ -1,0 +1,96 @@
+.blogpost-form{
+    width: 100%;
+    max-width: 650px;
+    box-shadow: 0px 0px 10px 3px rgb(189, 189, 189);
+    background-color: white;
+}
+.blogpost-form-contents{
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+}
+.blogpost-form-image-display{
+    width: 100%;
+    height: 300px;
+    margin: 10px 0;
+}
+.blogpost-form-image-display-img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.blogpost-form-image-selector{
+    display: block;
+}
+input[type=file]{
+    color: transparent;
+    pointer-events: none;
+}
+input[type=file]::file-selector-button{
+    width: 100px;
+    height: 30px;
+    border: none;
+    border-radius: 25px;
+    background-color: rgb(214, 245, 246);
+    color: black;
+    cursor: pointer;
+    pointer-events: all;
+}
+.blogpost-form-title{
+    display: block;
+    width: 100%;
+    height: 40px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+.blogpost-form-submit-btn{
+    margin-top: 20px;
+    width: 100px;
+    height: 40px;
+    border: none;
+    border-radius: 25px;
+    background-color: rgb(153, 228, 230);
+    color: black;
+    cursor: pointer;
+}
+.ql-container{
+    background-color: white;
+    width: 100%;
+    overflow: auto;
+}
+.ql-editor{
+    min-height: 360px;
+    max-height: 360px;
+}
+.blogpost-form-action-btns{
+    display: flex;
+    justify-content: flex-end;
+    gap: 5px;
+}
+.blogpost-form-cancel-btn{
+    background-color: rgb(219, 179, 100);
+    border-radius: 10px;
+    border: none;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+.blogpost-form-delete-btn{
+    background-color: rgb(246, 105, 105);
+    border-radius: 10px;
+    border: none;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+@media (max-width: 1000px){
+    .blogpost-form{
+        max-width: none;
+    }
+}
+@media (max-width: 700px){
+    .blogpost-form{
+        box-shadow: none;
+    }
+}

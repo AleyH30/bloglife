@@ -1,0 +1,31 @@
+.pymk-ms{
+    position: sticky;
+    top: 0;
+    right: 0;
+    flex: 1;
+    min-width: 310px;
+    height: 100vh;
+    background-color: white;
+    padding: 20px 20px;
+    border-left: 1px rgb(219, 219, 219) solid;
+    border-right: 1px rgb(219, 219, 219) solid;
+}
+.pymk-ms h1{
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 10px;
+    color: rgb(161, 161, 161);
+}
+.pymk-ms-contents{
+    width: 85%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+@media (max-width: 1000px){
+    .pymk-ms{
+        display: none;
+    }
+}

@@ -1,0 +1,19 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.app{
+  max-width: 1200px;
+  margin: auto;
+  min-height: 100vh;
+}
+.app-main-display{
+  display: flex;
+}
+
+@media (max-width: 700px){
+  .app{
+      background-color: white;
+  }
+}
