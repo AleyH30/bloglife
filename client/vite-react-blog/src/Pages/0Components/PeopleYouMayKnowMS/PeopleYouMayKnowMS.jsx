@@ -7,6 +7,7 @@ const PeopleYouMayKnowMS = (props) => {
     const userId = sessionStorage.getItem('userId')
     const [usersArr, setUsersArr] = useState([])
     const [isLoading, setIsLoading] = useState(true)
+    var suggestions = false;
 
     const GetUsers = async () => {
         try{
@@ -35,7 +36,7 @@ const PeopleYouMayKnowMS = (props) => {
             {isLoading? null : <div className="pymk-ms-contents">
                 {usersArr.map((user) => {
                     if (!user.followers.includes(userId))
-                    {
+                    { suggestions = true;
                       return <SuggestedPersonMI
                     key={user._id}
                     userId = {userId}
@@ -50,6 +51,7 @@ const PeopleYouMayKnowMS = (props) => {
                     }
                 }
                 )}
+                {isLoading? null : (suggestions? null : <p className="pymk-ms-ntsmsg">No new suggestions</p>)}
             </div>}
         </div>
     )

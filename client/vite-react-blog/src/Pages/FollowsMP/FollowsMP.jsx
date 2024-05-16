@@ -86,7 +86,7 @@ const FollowsMP = (props) => {
                     <hr />
                     {page === "following" ? 
                     <div className="follows-ms-display">
-                        {followingInfoArr.length === 0? <p className="follows-ms-display-ntsmsg">You are not following anyone.</p> : 
+                        {isLoading? null : followingInfoArr.length === 0? <p className="follows-ms-display-ntsmsg">You are not following anyone.</p> : 
                         followingInfoArr.map((user) => {
                             var isFollowing;
                             if (user.followers.includes(userId))
@@ -107,7 +107,7 @@ const FollowsMP = (props) => {
                             refresh={refresh}/>
                         })}
                     </div> : <div className="follows-ms-display">
-                        {followersInfoArr.length === 0? <p className="follows-ms-display-ntsmsg">You are not being followed by anyone</p> 
+                        {isLoading? null : followersInfoArr.length === 0? <p className="follows-ms-display-ntsmsg">You are not being followed by anyone</p> 
                         : followersInfoArr.map((user) => {
                             var isFollowing;
                             if (user.followers.includes(userId))

@@ -35,6 +35,7 @@
     background-color: rgb(103, 215, 103);
     border: none;
     cursor: pointer;
+    color: black;
 }
 .fud-mi-unfollow-btn{
     width: 40px;
@@ -43,4 +44,5 @@
     background-color: rgb(235, 93, 93);
     border: none;
     cursor: pointer;
+    color: black;
 }

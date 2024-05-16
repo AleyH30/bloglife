@@ -39,6 +39,7 @@
     border: none;
     cursor: pointer;
     font-size: 14px;
+    color: black;
 }
 .sp-mi-unfollow-btn{
     width: 40px;
@@ -47,4 +48,6 @@
     background-color: rgb(235, 93, 93);
     border: none;
     cursor: pointer;
+    font-size: 14px;
+    color: black;
 }

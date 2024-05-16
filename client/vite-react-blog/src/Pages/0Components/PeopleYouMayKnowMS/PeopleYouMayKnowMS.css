@@ -17,11 +17,16 @@
     color: rgb(161, 161, 161);
 }
 .pymk-ms-contents{
-    width: 85%;
+    width: 100%;
     margin: auto;
     display: flex;
     flex-direction: column;
     gap: 20px;
+}
+.pymk-ms-ntsmsg{
+    color: black;
+    text-align: center;
+    margin-top: 30px;
 }
 
 @media (max-width: 1000px){
