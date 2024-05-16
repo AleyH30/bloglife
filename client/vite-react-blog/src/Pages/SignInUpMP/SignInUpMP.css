@@ -8,7 +8,7 @@
 .signinup-mp-logo{
     text-align: center;
     font-size: 30px;
-    color: rgb(85, 203, 207);
+    color: rgb(153, 228, 230);
 }
 .signinup-mp-contents{
     max-width: 400px;
@@ -44,7 +44,7 @@
     width: 100%;
     height: 52px;
     color: white;
-    background-color: #80c4cf;
+    background-color: rgb(153, 228, 230);
     margin-top: 30px;
     border: none;
     border-radius: 25px;

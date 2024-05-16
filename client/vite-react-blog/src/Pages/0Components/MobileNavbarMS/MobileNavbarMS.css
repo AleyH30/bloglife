@@ -24,7 +24,7 @@
 }
 .mobile-navbar-ms-top-logo a{
     text-decoration: none;
-    color: rgb(154, 240, 243);
+    color: rgb(27, 125, 128);
 }
 .mobile-navbar-ms-side-toggle-btn{
     width: 50px;
@@ -32,7 +32,7 @@
     font-size: 25px;
     background-color: transparent;
     border: none;
-    color: rgb(154, 240, 243);
+    color: rgb(27, 125, 128);
     cursor: pointer;
 }
 
