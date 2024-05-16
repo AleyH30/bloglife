@@ -9,6 +9,8 @@ const FollowsMP = (props) => {
     const baseUrl = import.meta.env.VITE_SERVER_URL;
     const [userId, setUserId] = useState(sessionStorage.getItem('userId'));
     const [isLoading, setIsLoading] = useState(true)
+    const [isLoadingFollowers, setIsLoadingFollowers] = useState(true)
+    const [isLoadingFollowing, setIsLoadingFollowing] = useState(true)
     const [page, setPage] = useState()
     const [followersInfoArr, setFollowersInfoArr] = useState([])
     const [followingInfoArr, setFollowingInfoArr] = useState([])
@@ -17,14 +19,14 @@ const FollowsMP = (props) => {
     const Navigate = useNavigate();
 
     const GetFollowers = async () => {
-        console.log("should be calling")
         try {
             const response = await fetch(`${baseUrl}/users/${userId}/followers`)
 
             if (response.ok) {
                 const followers = await response.json()
-                setFollowersInfoArr(followers)//try going back to folloers.formattedFollowers with curly brackets on backend
+                setFollowersInfoArr(followers)//try going back to folloers.formattedFollowers with curly brackets on backend to see if it will update smoothly. could have sworn it did before.
                 setIsLoading(false)
+                setIsLoadingFollowers(false)
             }
             else{
                 console.log("error fetching followers")
@@ -43,6 +45,7 @@ const FollowsMP = (props) => {
                 const following = await response.json()
                 setFollowingInfoArr(following)
                 setIsLoading(false)
+                setIsLoadingFollowing(false)
             }
             else{
                 console.log("error fetching followers")
@@ -86,7 +89,7 @@ const FollowsMP = (props) => {
                     <hr />
                     {page === "following" ? 
                     <div className="follows-ms-display">
-                        {isLoading? null : followingInfoArr.length === 0? <p className="follows-ms-display-ntsmsg">You are not following anyone.</p> : 
+                        {isLoadingFollowing? null : followingInfoArr.length === 0? <p className="follows-ms-display-ntsmsg">You are not following anyone.</p> : 
                         followingInfoArr.map((user) => {
                             var isFollowing;
                             if (user.followers.includes(userId))
@@ -107,7 +110,7 @@ const FollowsMP = (props) => {
                             refresh={refresh}/>
                         })}
                     </div> : <div className="follows-ms-display">
-                        {isLoading? null : followersInfoArr.length === 0? <p className="follows-ms-display-ntsmsg">You are not being followed by anyone</p> 
+                        {isLoadingFollowers? null : followersInfoArr.length === 0? <p className="follows-ms-display-ntsmsg">You are not being followed by anyone</p> 
                         : followersInfoArr.map((user) => {
                             var isFollowing;
                             if (user.followers.includes(userId))

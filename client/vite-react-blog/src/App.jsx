@@ -29,6 +29,8 @@ const App = () => {
       setShowSidebar(true)
     }
 
+    window.scrollTo(0, 0)
+
   }, [location])
 
   return (

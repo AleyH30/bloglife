@@ -7,6 +7,7 @@
     background-color: white;
     border-right: 1px solid rgb(219, 219, 219);
     border-left: 1px solid rgb(219, 219, 219);
+    overflow-y: auto;
 }
 .sidebar-ms-hide{
     display: none;

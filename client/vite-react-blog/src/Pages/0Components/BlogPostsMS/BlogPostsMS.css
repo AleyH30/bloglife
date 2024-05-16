@@ -33,7 +33,7 @@
     object-fit: cover;
 }
 .blogposts-ms h1{
-    font-size: 18px;
+    font-size: 16px;
     color: rgb(143, 143, 143);
 }
 .blogposts-ms-follow-btn{
@@ -44,6 +44,7 @@
     border: none;
     cursor: pointer;
     font-size: 12px;
+    color: black;
 }
 .blogposts-ms-unfollow-btn{
     width: 40px;
@@ -53,6 +54,7 @@
     border: none;
     cursor: pointer;
     font-size: 12px;
+    color: black;
 }
 .blogposts-ms-contents{
     width: 100%;

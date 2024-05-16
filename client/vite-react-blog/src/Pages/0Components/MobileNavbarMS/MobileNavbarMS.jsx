@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars, faPlus, faHouse, faBell, faEnvelope, faUser, faUsers } from '@fortawesome/free-solid-svg-icons'
+import { faBars, faXmark, faPlus, faHouse, faBell, faEnvelope, faUser, faUsers } from '@fortawesome/free-solid-svg-icons'
 import "./MobileNavbarMS.css"
 
 const MobileNavbarMS = () => {
@@ -67,7 +67,7 @@ const MobileNavbarMS = () => {
                     <p>{user.name}</p>
                     <p>@{user.username}</p>
                 </div>
-                    <button className="mobile-navbar-ms-side-x-close-btn" onClick={() => setSidebarActive(false)}>X</button>
+                    <button className="mobile-navbar-ms-side-x-close-btn" onClick={() => setSidebarActive(false)}><FontAwesomeIcon icon={faXmark} /></button>
                     <nav className="nav">
                         <ul className="mobile-navbar-ms-side-links">
                             <li className={page === "/blogpost/create" ? 'side-ms-placeholder' : null} onClick={() => setSidebarActive(false)}><Link to={`/blogpost/create`}><FontAwesomeIcon className="mob-nav-links-i" icon={faPlus} /> <p>Create</p></Link></li>
