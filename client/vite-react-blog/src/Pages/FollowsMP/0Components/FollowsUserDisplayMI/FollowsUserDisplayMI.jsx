@@ -7,7 +7,7 @@ import "./FollowsUserDisplayMI.css"
 const FollowsUserDisplayMI = (props) => {
     const baseUrl= import.meta.env.VITE_SERVER_URL
     const token = localStorage.getItem("auth-token")
-    const [isFollowing, setIsFollowing] = useState(props.isFollowing)
+    const [isFollowing, setIsFollowing] = useState(props.followers.find((followers) => followers === props.userId))
 
 
     const UpdateFollowingUnfollowing = async (action) => {
@@ -29,10 +29,14 @@ const FollowsUserDisplayMI = (props) => {
         }
     }
 
+    const updateIsfollowing = () => {
+        props.cf? setIsFollowing(props.cf.find((cf) => cf === props.otherUserId)) : null;
+    }
+
     useEffect(() => {
-        console.log(isFollowing)
         console.log(props.name)
-    }, [props.refresh])
+        updateIsfollowing()
+    }, [props.refresh, props.cf])
 
     return(
         <div className="follows-user-display-mi">

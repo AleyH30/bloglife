@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react"
-import { useLocation, useNavigate } from "react-router-dom"
-import Sidebar from "../0Components/SidebarMS/SidebarMS";
+import { useLocation, useNavigate, useParams } from "react-router-dom"
 import "./FollowsMP.css"
 import FollowsUserDisplayMI from "./0Components/FollowsUserDisplayMI/FollowsUserDisplayMI";
 import PeopleYouMayKnowMS from "../0Components/PeopleYouMayKnowMS/PeopleYouMayKnowMS";
@@ -16,7 +15,9 @@ const FollowsMP = (props) => {
     const [followingInfoArr, setFollowingInfoArr] = useState([])
     const token = localStorage.getItem('auth-token')
     const [refresh, setRefresh] = useState(true)
+    const [currentFollowing, setCurrentFollowing] = useState([])
     const Navigate = useNavigate();
+    console.log(page)
 
     const GetFollowers = async () => {
         try {
@@ -24,7 +25,8 @@ const FollowsMP = (props) => {
 
             if (response.ok) {
                 const followers = await response.json()
-                setFollowersInfoArr(followers)//try going back to folloers.formattedFollowers with curly brackets on backend to see if it will update smoothly. could have sworn it did before.
+                setFollowersInfoArr(followers.formattedFollowers)
+                setCurrentFollowing(followers.userfollowing)
                 setIsLoading(false)
                 setIsLoadingFollowers(false)
             }
@@ -71,7 +73,6 @@ const FollowsMP = (props) => {
             }
             else if(location.pathname === "/followers"){
                 setPage("followers")
-                setFollowersInfoArr([])
                 GetFollowers()
             }
         }
@@ -87,16 +88,11 @@ const FollowsMP = (props) => {
                 {isLoading ? null : <div className="follows-ms-contents">
                     <h1>{page.charAt(0).toUpperCase() + page.slice(1)}</h1>
                     <hr />
-                    {page === "following" ? 
                     <div className="follows-ms-display">
-                        {isLoadingFollowing? null : followingInfoArr.length === 0? <p className="follows-ms-display-ntsmsg">You are not following anyone.</p> : 
+                    {page === "following" ? 
+                    
+                        (isLoadingFollowing? null : followingInfoArr.length === 0? <p className="follows-ms-display-ntsmsg">You are not following anyone.</p> : 
                         followingInfoArr.map((user) => {
-                            var isFollowing;
-                            if (user.followers.includes(userId))
-                            {isFollowing = true}
-                            else{
-                                isFollowing = false
-                            }
                         return <FollowsUserDisplayMI
                             key={user._id}
                             userId={userId}
@@ -104,33 +100,27 @@ const FollowsMP = (props) => {
                             name={user.name}
                             username={user.username}
                             picturePath={user.picturePath}
-                            isFollowing={isFollowing}
                             followers={user.followers}
                             function={CallRefresh} 
                             refresh={refresh}/>
-                        })}
-                    </div> : <div className="follows-ms-display">
-                        {isLoadingFollowers? null : followersInfoArr.length === 0? <p className="follows-ms-display-ntsmsg">You are not being followed by anyone</p> 
+                        }))
+                    : 
+                        (isLoadingFollowers? null : followersInfoArr.length === 0? <p className="follows-ms-display-ntsmsg">You are not being followed by anyone</p> 
                         : followersInfoArr.map((user) => {
-                            var isFollowing;
-                            if (user.followers.includes(userId))
-                            {isFollowing = true}
-                            else{
-                                isFollowing = false
-                            }
-                        return <FollowsUserDisplayMI
+                                return <FollowsUserDisplayMI
                             key={user._id}
                             userId={userId}
                             otherUserId={user._id}
                             name={user.name}
                             username={user.username}
                             picturePath={user.picturePath}
-                            isFollowing={isFollowing}
                             followers={user.followers}
                             function={CallRefresh}
-                            refresh={refresh} />
-                    })}
-                    </div>}
+                            refresh={refresh} 
+                            cf={currentFollowing}/>
+                        
+                    }))}
+                    </div>
                 </div>}
             </div>
             <PeopleYouMayKnowMS function={CallRefresh} refresh={refresh}/>
