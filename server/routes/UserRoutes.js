@@ -162,7 +162,7 @@ router.get("/:userId/followers", async (req, res) => {
                     return{_id, name, username, picturePath, following, followers}
                 }
                 )
-            res.status(200).json(formattedFollowers)
+            res.status(200).json({formattedFollowers, userfollowing: demoUser.following})
 
         }
         else{
@@ -189,7 +189,7 @@ router.get("/:userId/followers", async (req, res) => {
                     return { _id, name, username, picturePath, following, followers }
                 }
             )
-            res.status(200).json(formattedFollowers)
+            res.status(200).json({formattedFollowers, userfollowing: user.following})
         }
     }
     catch (error) {
