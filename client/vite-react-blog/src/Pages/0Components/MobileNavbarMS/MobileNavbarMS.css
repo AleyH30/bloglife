@@ -41,7 +41,7 @@
 .mobile-navbar-ms-side-bg-close-btn{
     position: fixed;
     top: 0;
-    width: 100vw;
+    width: 100dvw;
     height: 100dvh;
     background-color: rgba(99, 99, 99, 0.808);
     z-index: 101;
@@ -119,17 +119,17 @@
     display: flex;
     align-items: center;
     height: 100%;
-    width: fit-content;
+    width: 100%;
     font-size: 16px;
     text-decoration: none;
     color: rgb(100, 100, 100);
-    margin-left: 50px;
 }
 .mobile-navbar-ms-side-links li p{
     margin-left: 20px;
 }
 .mob-nav-links-i{
     width: 25px;
+    margin-left: 50px;
 }
 .side-ms-placeholder{
     background-color: rgb(214, 245, 246);

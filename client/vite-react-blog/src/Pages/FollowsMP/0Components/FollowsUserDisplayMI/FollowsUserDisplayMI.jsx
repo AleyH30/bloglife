@@ -1,23 +1,23 @@
 import {useEffect, useState} from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUserPlus, faUserMinus } from '@fortawesome/free-solid-svg-icons';
+import { faUserPlus, faUserMinus, faCircleNotch } from '@fortawesome/free-solid-svg-icons';
 import "./FollowsUserDisplayMI.css"
 
 const FollowsUserDisplayMI = (props) => {
     const baseUrl= import.meta.env.VITE_SERVER_URL
     const token = localStorage.getItem("auth-token")
     const [isFollowing, setIsFollowing] = useState(props.followers.find((followers) => followers === props.userId))
+    const [showSpinner, setShowSpinner] = useState(false)
 
 
     const UpdateFollowingUnfollowing = async (action) => {
-        console.log("how slow?1")
+        setShowSpinner(true)
         try{
             const response = await fetch (`${baseUrl}/users/${props.userId}/following/${props.otherUserId}`,
             {method: "PATCH",
              headers: {"Content-Type": "application/json", authorization: token},
              body: JSON.stringify({action})})
-             console.log("how slow?2")
             if (response.ok){
                 const data = await response.json()
                 setIsFollowing(data.find((otherUser) => otherUser._id === props.otherUserId))
@@ -27,6 +27,7 @@ const FollowsUserDisplayMI = (props) => {
         catch (error){
             console.log(error)
         }
+        setShowSpinner(false)
     }
 
     const updateIsfollowing = () => {
@@ -34,7 +35,6 @@ const FollowsUserDisplayMI = (props) => {
     }
 
     useEffect(() => {
-        console.log(props.name)
         updateIsfollowing()
     }, [props.refresh, props.cf])
 
@@ -48,8 +48,8 @@ const FollowsUserDisplayMI = (props) => {
                 </div></Link>
                 
             </div>
-            {isFollowing? <button className="fud-mi-unfollow-btn" onClick={() => UpdateFollowingUnfollowing("unfollow")}><FontAwesomeIcon icon={faUserMinus}/></button> :
-            <button className="fud-mi-follow-btn" onClick={() => UpdateFollowingUnfollowing("follow")}><FontAwesomeIcon icon={faUserPlus}/></button>}
+            {isFollowing? <button className="fud-mi-unfollow-btn" onClick={() => UpdateFollowingUnfollowing("unfollow")}><FontAwesomeIcon icon={faUserMinus} style={{display: showSpinner? "none" : "inline-block"}}/><FontAwesomeIcon className="fud-mi-spinner" icon={faCircleNotch} style={{display: showSpinner? "inline-block" : "none"}} spin /></button> :
+            <button className="fud-mi-follow-btn" onClick={() => UpdateFollowingUnfollowing("follow")}><FontAwesomeIcon icon={faUserPlus} style={{display: showSpinner? "none" : "inline-block"}}/><FontAwesomeIcon className="fud-mi-spinner" icon={faCircleNotch} style={{display: showSpinner? "inline-block" : "none"}} spin /></button>}
         </div>
     )
 }

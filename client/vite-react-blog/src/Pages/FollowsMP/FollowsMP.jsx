@@ -17,7 +17,6 @@ const FollowsMP = (props) => {
     const [refresh, setRefresh] = useState(true)
     const [currentFollowing, setCurrentFollowing] = useState([])
     const Navigate = useNavigate();
-    console.log(page)
 
     const GetFollowers = async () => {
         try {

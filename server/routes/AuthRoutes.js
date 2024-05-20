@@ -62,7 +62,6 @@ router.post("/login", async (req, res) => {
         }
 
         const token = jwt.sign({ id: user._id}, process.env.JWT_SECRET);
-        //delete user.password and user.email then just send user edroh55
         res.json({success: true, token, userId: user._id, username: user.username})
     }
     catch(error){

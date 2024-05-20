@@ -1,15 +1,18 @@
 import React, {useState, useEffect} from 'react';
 import {Link, useNavigate} from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCircleNotch} from '@fortawesome/free-solid-svg-icons'
 import "./SignInUpMP.css"
 
 const SignInUpMP = () => {
     const [userId, setUserId] = useState(sessionStorage.getItem('userId'));
     const baseUrl = import.meta.env.VITE_SERVER_URL
     const [state, setState] = useState('Sign In');
+    const [showSpinner, setShowSpinner] = useState(false)
     const [formData, setFormData] = useState({
         fullname:"",
-        username:"",
-        password:"",
+        username:"*********",
+        password:"placeholder",
         email:""
     })
     const [demoFormData, setDemoFormData] = useState({
@@ -52,6 +55,7 @@ const SignInUpMP = () => {
 
     const SignInWithDemo = async (e) => {
         e.preventDefault()
+        setShowSpinner(true)
         try {
             const response = await fetch (`${baseUrl}/auth/registerDemoUser`, {
             method: "POST",
@@ -71,6 +75,7 @@ const SignInUpMP = () => {
         }catch (error) {
             console.log(error)
         }
+        setShowSpinner(false)
     }
 
     const SignIn = async (e) => {
@@ -125,15 +130,17 @@ const SignInUpMP = () => {
                             </div></> : <></>}
                         <div className='form-group'>
                             <label htmlFor='username'>Username:</label>
-                            <input id='username' name='username' value={formData.username} onChange={ChangeHandler} type="text" placeholder="Username" />
+                            <input id='username' name='username' value={formData.username} readOnly /*onChange={ChangeHandler}*/ type="text" placeholder="Username" />
                         </div>
                         <div className='form-group'>
                             <label htmlFor='password'>Password:</label>
-                            <input id='password' name='password' value={formData.password} onChange={ChangeHandler} type="password" placeholder="Password" />
+                            <input id='password' name='password' value={formData.password} readOnly /*onChange={ChangeHandler}*/ type="password" placeholder="Password" />
                         </div>
                     </div>
-                    <button className='signinup-btn' type='submit' onClick={(e) => { state === "Sign In" ? SignIn(e) : SignUp(e) }}>{state}</button>
-                    <button className='signinup-btn' type='submit' onClick={(e) => { SignInWithDemo(e) }}>Sign In With Demo</button>
+                    {/* <button className='signinup-btn' type='submit' onClick={(e) => { state === "Sign In" ? SignIn(e) : SignUp(e) }}>{state}</button> */}
+                    <button className='signinup-btn' type='submit' onClick={(e) => { SignInWithDemo(e) }}><p style={{display: showSpinner? "none" : "inline-block"}}>Sign In With Demo</p>
+                    <FontAwesomeIcon className="fud-mi-spinner" icon={faCircleNotch} style={{display: showSpinner? "inline-block" : "none"}} spin />
+                    </button>
                     {/* {state === "Sign Up" ?
                         <>
                             <div className="signinup-agree">

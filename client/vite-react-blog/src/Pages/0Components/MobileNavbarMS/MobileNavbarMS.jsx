@@ -60,7 +60,7 @@ const MobileNavbarMS = () => {
             </div>
 
             <div className="mobile-navbar-ms-side-bg-close-btn" style={{ display: sidebarActive ? "block" : "none" }} onClick={() => setSidebarActive(false)}></div>
-            <div className="mobile-navbar-ms-side" style={{ display: sidebarActive ? "block" : "none" }}>
+            {isLoading? null : <div className="mobile-navbar-ms-side" style={{ display: sidebarActive ? "block" : "none" }}>
                 <div className="mobile-navbar-ms-side-contents">
                 <div className='mobile-navbar-ms-side-userdisplay'>
                     <div className='mobile-navbar-ms-side-user-image'><img src={`${baseUrl}/assets/${user.picturePath}`} alt='' /></div>
@@ -81,7 +81,7 @@ const MobileNavbarMS = () => {
                     </nav>
                     <button className="mobile-navbar-ms-side-logout-btn" onClick={() => ClickLogOut()}>Log Out</button>
                 </div>
-            </div>
+            </div>}
         </>
     )
 

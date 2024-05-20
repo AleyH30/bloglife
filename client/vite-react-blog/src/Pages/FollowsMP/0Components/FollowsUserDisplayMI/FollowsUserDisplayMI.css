@@ -46,3 +46,7 @@
     cursor: pointer;
     color: black;
 }
+.fud-mi-spinner{
+    color:rgba(255, 255, 255, 0.637);
+    font-size: 20px;
+}
